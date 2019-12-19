@@ -15,6 +15,10 @@
 		805E5D3623ABCD5000C5DE01 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D3523ABCD5000C5DE01 /* FavoritesViewController.swift */; };
 		805E5D3823ABCD6200C5DE01 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D3723ABCD6200C5DE01 /* DetailViewController.swift */; };
 		805E5D3B23ABCDA100C5DE01 /* ElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D3A23ABCDA100C5DE01 /* ElementCell.swift */; };
+		805E5D3F23ABD2FC00C5DE01 /* ElementsDataLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D3E23ABD2FC00C5DE01 /* ElementsDataLoad.swift */; };
+		805E5D4123ABD55700C5DE01 /* ElementsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D4023ABD55700C5DE01 /* ElementsAPIClient.swift */; };
+		805E5D4523ABD61B00C5DE01 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D4423ABD61B00C5DE01 /* AppError.swift */; };
+		805E5D4723ABD62F00C5DE01 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D4623ABD62F00C5DE01 /* NetworkHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		805E5D3523ABCD5000C5DE01 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		805E5D3723ABCD6200C5DE01 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		805E5D3A23ABCDA100C5DE01 /* ElementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCell.swift; sourceTree = "<group>"; };
+		805E5D3E23ABD2FC00C5DE01 /* ElementsDataLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsDataLoad.swift; sourceTree = "<group>"; };
+		805E5D4023ABD55700C5DE01 /* ElementsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsAPIClient.swift; sourceTree = "<group>"; };
+		805E5D4423ABD61B00C5DE01 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		805E5D4623ABD62F00C5DE01 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +69,12 @@
 			isa = PBXGroup;
 			children = (
 				5734756521DA90C700FB6177 /* Main.storyboard */,
-				805E5D3923ABCD7400C5DE01 /* Custom Cell */,
+				805E5D4323ABD57F00C5DE01 /* Network Services */,
+				805E5D4223ABD57500C5DE01 /* Extentions */,
+				805E5D3C23ABD2CF00C5DE01 /* Model */,
+				805E5D3D23ABD2D800C5DE01 /* APIClient */,
 				805E5D3223ABCCBE00C5DE01 /* View Controllers */,
+				805E5D3923ABCD7400C5DE01 /* Custom Cell */,
 				5734757321DA90F500FB6177 /* Supporting Files */,
 				5734756D21DA90C800FB6177 /* Info.plist */,
 			);
@@ -95,6 +107,38 @@
 				805E5D3A23ABCDA100C5DE01 /* ElementCell.swift */,
 			);
 			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
+		805E5D3C23ABD2CF00C5DE01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				805E5D3E23ABD2FC00C5DE01 /* ElementsDataLoad.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		805E5D3D23ABD2D800C5DE01 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				805E5D4023ABD55700C5DE01 /* ElementsAPIClient.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		805E5D4223ABD57500C5DE01 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				805E5D4423ABD61B00C5DE01 /* AppError.swift */,
+				805E5D4623ABD62F00C5DE01 /* NetworkHelper.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		805E5D4323ABD57F00C5DE01 /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Network Services";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,8 +212,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				805E5D3F23ABD2FC00C5DE01 /* ElementsDataLoad.swift in Sources */,
+				805E5D4723ABD62F00C5DE01 /* NetworkHelper.swift in Sources */,
 				5734756421DA90C700FB6177 /* ElementsViewController.swift in Sources */,
+				805E5D4123ABD55700C5DE01 /* ElementsAPIClient.swift in Sources */,
 				805E5D3B23ABCDA100C5DE01 /* ElementCell.swift in Sources */,
+				805E5D4523ABD61B00C5DE01 /* AppError.swift in Sources */,
 				805E5D3623ABCD5000C5DE01 /* FavoritesViewController.swift in Sources */,
 				5734756221DA90C700FB6177 /* AppDelegate.swift in Sources */,
 				805E5D3823ABCD6200C5DE01 /* DetailViewController.swift in Sources */,

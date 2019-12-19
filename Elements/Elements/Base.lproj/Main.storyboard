@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GIB-YU-Wqd">
-                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="elementCell" rowHeight="160" id="M0R-3K-4X2" customClass="ElementCell" customModule="Elements" customModuleProvider="target">
@@ -64,18 +64,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rDk-gD-RQ2">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rDk-gD-RQ2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Egx-ps-Bvs"/>
-                            <constraint firstItem="GIB-YU-Wqd" firstAttribute="top" secondItem="rDk-gD-RQ2" secondAttribute="bottom" id="EtF-pO-4Fs"/>
-                            <constraint firstItem="rDk-gD-RQ2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GDK-BQ-73s"/>
-                            <constraint firstItem="rDk-gD-RQ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pmk-5K-tZc"/>
                             <constraint firstItem="GIB-YU-Wqd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QgU-cr-2y2"/>
+                            <constraint firstItem="GIB-YU-Wqd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UKq-yr-TYq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GIB-YU-Wqd" secondAttribute="bottom" id="VDk-hI-bcr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GIB-YU-Wqd" secondAttribute="trailing" id="iGp-Zz-Mx3"/>
                         </constraints>
@@ -120,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cRl-Vz-x7n">
-                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoriteCell" rowHeight="160" id="jVA-8w-7SL" customClass="ElementCell" customModule="Elements" customModuleProvider="target">
@@ -177,20 +170,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vFA-KD-7uz">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vFA-KD-7uz" firstAttribute="trailing" secondItem="z9x-HK-qvM" secondAttribute="trailing" id="4bN-yr-swV"/>
-                            <constraint firstItem="vFA-KD-7uz" firstAttribute="top" secondItem="z9x-HK-qvM" secondAttribute="top" id="AO0-NK-fqw"/>
-                            <constraint firstItem="vFA-KD-7uz" firstAttribute="leading" secondItem="z9x-HK-qvM" secondAttribute="leading" id="GQR-P5-UZ1"/>
-                            <constraint firstItem="cRl-Vz-x7n" firstAttribute="top" secondItem="vFA-KD-7uz" secondAttribute="bottom" id="HAl-za-9Jz"/>
                             <constraint firstItem="cRl-Vz-x7n" firstAttribute="trailing" secondItem="z9x-HK-qvM" secondAttribute="trailing" id="QwO-H8-93e"/>
                             <constraint firstItem="cRl-Vz-x7n" firstAttribute="bottom" secondItem="z9x-HK-qvM" secondAttribute="bottom" id="gJO-2d-6uk"/>
                             <constraint firstItem="cRl-Vz-x7n" firstAttribute="leading" secondItem="z9x-HK-qvM" secondAttribute="leading" id="ppc-v1-qIl"/>
+                            <constraint firstItem="cRl-Vz-x7n" firstAttribute="top" secondItem="z9x-HK-qvM" secondAttribute="top" id="rKF-tL-RdP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z9x-HK-qvM"/>
                     </view>
