@@ -10,11 +10,47 @@ import UIKit
 
 class ElementsViewController: UIViewController {
 
+    @IBOutlet weak var elementsTableView: UITableView!
+    
+    var elements = [ElementsDataLoad]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.elementsTableView.reloadData()
+            }
+        }
+    }
+    
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    elementsTableView.dataSource = self
+    elementsTableView.delegate = self
   }
 
 
 }
 
+extension ElementsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return elements.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "elementCell", for: indexPath) as? ElementCell else {
+            fatalError("cell has not conformed to ElementCell")
+            return
+        }
+        
+        let selectedElement = elements[indexPath.row]
+        
+        //configure cell
+        
+        return cell
+    }
+    
+}
