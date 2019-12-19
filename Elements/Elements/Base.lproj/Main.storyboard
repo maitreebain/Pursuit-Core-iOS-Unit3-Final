@@ -59,6 +59,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="elementImage" destination="mhO-cw-Nnq" id="2Vw-6W-aQf"/>
+                                            <outlet property="elementMass" destination="BgN-Ik-5iZ" id="kzM-8i-Hzd"/>
+                                            <outlet property="elementName" destination="Sit-Ou-0IR" id="U0c-L9-KpE"/>
                                             <segue destination="0Db-JK-S9f" kind="show" id="ZA2-bi-wmL"/>
                                         </connections>
                                     </tableViewCell>

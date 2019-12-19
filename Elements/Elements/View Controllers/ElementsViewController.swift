@@ -25,8 +25,22 @@ class ElementsViewController: UIViewController {
     
     elementsTableView.dataSource = self
     elementsTableView.delegate = self
+    loadData()
   }
 
+    func loadData() {
+        
+        ElementsAPIClient.getElements { (result) in
+            
+            switch result{
+            case .failure(let appError):
+                print("appError: \(appError)")
+            case .success(let elements):
+                self.elements = elements
+            }
+        }
+        
+    }
 
 }
 
@@ -43,12 +57,11 @@ extension ElementsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "elementCell", for: indexPath) as? ElementCell else {
             fatalError("cell has not conformed to ElementCell")
-            return
         }
         
         let selectedElement = elements[indexPath.row]
         
-        //configure cell
+        cell.configureCell(for: selectedElement)
         
         return cell
     }
