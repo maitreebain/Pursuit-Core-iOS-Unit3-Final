@@ -51,6 +51,31 @@ class DetailViewController: UIViewController {
         }
     }
 
-
+    @IBAction func favorited(_ sender: UIBarButtonItem) {
+        
+        sender.isEnabled = false
+        
+        guard let element = elements else {
+            print("did not conform to elements")
+            return
+        }
+        
+        let addedFavorite = ElementsDataLoad(name: element.name, atomic_mass: element.atomic_mass, symbol: element.symbol, number: element.number, melt: element.melt, molar_heat: element.molar_heat, discovered_by: element.discovered_by, favoritedBy: "Mai")
+        
+        ElementsAPIClient.postFavorites(favorite: addedFavorite) { [weak self] (result) in
+            
+            switch result {
+                case .failure(let appError):
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "Failed to Post", message: "\(appError)")
+                        sender.isEnabled = true
+                    }
+                case .success:
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "Favorite added!", message: "\(addedFavorite.name) added to your favorites")
+                }
+            }
+        }
+    }
     
 }

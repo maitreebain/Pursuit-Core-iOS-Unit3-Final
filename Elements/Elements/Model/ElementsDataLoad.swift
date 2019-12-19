@@ -16,6 +16,7 @@ struct ElementsDataLoad: Codable {
     let melt: Double?
     let molar_heat: Double?
     let discovered_by: String?
+    let favoritedBy: String?
 }
 
 //fix coding keys later

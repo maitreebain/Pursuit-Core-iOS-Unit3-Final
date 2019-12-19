@@ -10,21 +10,22 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
 
+    @IBOutlet weak var favoritesTableView: UITableView!
+    
+    var elements = [ElementsDataLoad]() {
+        didSet {
+            self.favoritesTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        favoritesTableView.delegate = self
+        favoritesTableView.dataSource = self
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate

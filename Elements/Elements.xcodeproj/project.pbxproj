@@ -20,6 +20,7 @@
 		805E5D4523ABD61B00C5DE01 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D4423ABD61B00C5DE01 /* AppError.swift */; };
 		805E5D4723ABD62F00C5DE01 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D4623ABD62F00C5DE01 /* NetworkHelper.swift */; };
 		805E5D4923ABE71600C5DE01 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D4823ABE71600C5DE01 /* UIImage+Extensions.swift */; };
+		805E5D4B23AC068800C5DE01 /* ViewControllers+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D4A23AC068800C5DE01 /* ViewControllers+Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		805E5D4423ABD61B00C5DE01 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		805E5D4623ABD62F00C5DE01 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		805E5D4823ABE71600C5DE01 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		805E5D4A23AC068800C5DE01 /* ViewControllers+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllers+Alerts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				805E5D4823ABE71600C5DE01 /* UIImage+Extensions.swift */,
+				805E5D4A23AC068800C5DE01 /* ViewControllers+Alerts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				805E5D4723ABD62F00C5DE01 /* NetworkHelper.swift in Sources */,
 				5734756421DA90C700FB6177 /* ElementsViewController.swift in Sources */,
 				805E5D4123ABD55700C5DE01 /* ElementsAPIClient.swift in Sources */,
+				805E5D4B23AC068800C5DE01 /* ViewControllers+Alerts.swift in Sources */,
 				805E5D3B23ABCDA100C5DE01 /* ElementCell.swift in Sources */,
 				805E5D4923ABE71600C5DE01 /* UIImage+Extensions.swift in Sources */,
 				805E5D4523ABD61B00C5DE01 /* AppError.swift in Sources */,

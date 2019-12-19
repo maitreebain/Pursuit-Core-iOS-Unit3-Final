@@ -120,7 +120,11 @@
                         <viewLayoutGuide key="safeArea" id="mCx-53-Fex"/>
                     </view>
                     <navigationItem key="navigationItem" id="aj7-rp-KG5">
-                        <barButtonItem key="rightBarButtonItem" title="Favorite" image="star.fill" catalog="system" id="dO4-0a-Zb0"/>
+                        <barButtonItem key="rightBarButtonItem" title="Favorite" image="star.fill" catalog="system" id="dO4-0a-Zb0">
+                            <connections>
+                                <action selector="favorited:" destination="0Db-JK-S9f" id="xc2-BY-gFE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="DetailTextView" destination="3YA-Lz-fWs" id="GR2-C6-6lh"/>
@@ -132,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="2898.5507246376815" y="405.80357142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorites View Controller-->
         <scene sceneID="UD8-fa-KHu">
             <objects>
-                <viewController id="UIE-cl-qGB" sceneMemberID="viewController">
+                <viewController id="UIE-cl-qGB" customClass="FavoritesViewController" customModule="Elements" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sDa-b2-uws">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,6 +213,9 @@
                         <viewLayoutGuide key="safeArea" id="z9x-HK-qvM"/>
                     </view>
                     <navigationItem key="navigationItem" id="gUM-rD-9Nj"/>
+                    <connections>
+                        <outlet property="favoritesTableView" destination="cRl-Vz-x7n" id="GeO-et-qpw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GKs-8m-1RY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -277,6 +284,6 @@
         <image name="staroflife" catalog="system" width="62" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZA2-bi-wmL"/>
+        <segue reference="TIS-nH-5Al"/>
     </inferredMetricsTieBreakers>
 </document>
