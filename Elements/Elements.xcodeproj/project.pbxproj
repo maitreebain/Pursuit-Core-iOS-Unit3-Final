@@ -19,6 +19,7 @@
 		805E5D4123ABD55700C5DE01 /* ElementsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D4023ABD55700C5DE01 /* ElementsAPIClient.swift */; };
 		805E5D4523ABD61B00C5DE01 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D4423ABD61B00C5DE01 /* AppError.swift */; };
 		805E5D4723ABD62F00C5DE01 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D4623ABD62F00C5DE01 /* NetworkHelper.swift */; };
+		805E5D4923ABE71600C5DE01 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E5D4823ABE71600C5DE01 /* UIImage+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		805E5D4023ABD55700C5DE01 /* ElementsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsAPIClient.swift; sourceTree = "<group>"; };
 		805E5D4423ABD61B00C5DE01 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		805E5D4623ABD62F00C5DE01 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		805E5D4823ABE71600C5DE01 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				5734756521DA90C700FB6177 /* Main.storyboard */,
-				805E5D4323ABD57F00C5DE01 /* Network Services */,
-				805E5D4223ABD57500C5DE01 /* Extentions */,
+				805E5D4323ABD57F00C5DE01 /* Extensions */,
+				805E5D4223ABD57500C5DE01 /* Network Services */,
 				805E5D3C23ABD2CF00C5DE01 /* Model */,
 				805E5D3D23ABD2D800C5DE01 /* APIClient */,
 				805E5D3223ABCCBE00C5DE01 /* View Controllers */,
@@ -125,20 +127,21 @@
 			path = APIClient;
 			sourceTree = "<group>";
 		};
-		805E5D4223ABD57500C5DE01 /* Extentions */ = {
+		805E5D4223ABD57500C5DE01 /* Network Services */ = {
 			isa = PBXGroup;
 			children = (
 				805E5D4423ABD61B00C5DE01 /* AppError.swift */,
 				805E5D4623ABD62F00C5DE01 /* NetworkHelper.swift */,
 			);
-			path = Extentions;
+			path = "Network Services";
 			sourceTree = "<group>";
 		};
-		805E5D4323ABD57F00C5DE01 /* Network Services */ = {
+		805E5D4323ABD57F00C5DE01 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				805E5D4823ABE71600C5DE01 /* UIImage+Extensions.swift */,
 			);
-			path = "Network Services";
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +220,7 @@
 				5734756421DA90C700FB6177 /* ElementsViewController.swift in Sources */,
 				805E5D4123ABD55700C5DE01 /* ElementsAPIClient.swift in Sources */,
 				805E5D3B23ABCDA100C5DE01 /* ElementCell.swift in Sources */,
+				805E5D4923ABE71600C5DE01 /* UIImage+Extensions.swift in Sources */,
 				805E5D4523ABD61B00C5DE01 /* AppError.swift in Sources */,
 				805E5D3623ABCD5000C5DE01 /* FavoritesViewController.swift in Sources */,
 				5734756221DA90C700FB6177 /* AppDelegate.swift in Sources */,

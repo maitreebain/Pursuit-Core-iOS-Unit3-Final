@@ -10,20 +10,23 @@ import Foundation
 
 struct ElementsDataLoad: Codable {
     let name: String
-    let atomicMass: Double?
+    let atomic_mass: Double?
     let symbol: String
-    let number: Int
+    var number: Int
     let melt: Double?
-    let boilingPoint: Double?
-    let discoveredBy: String?
+    let molar_heat: Double?
+    let discovered_by: String?
 }
 
-private enum CodingKeys: String, CodingKey {
-    case name
-    case symbol
-    case number
-    case melt
-    case atomicMass = "atomic_mass"
-    case discoveredBy = "discovered_by"
-    case boilingPoint = "molar_heat"
-}
+//fix coding keys later
+
+//private enum CodingKeys: String, CodingKey {
+//    case name
+//    case atomicMass = "atomic_mass"
+//    case symbol
+//    case number
+//    case melt
+//    case boilingPoint = "molar_heat"
+//    case discoveredBy = "discovered_by"
+//
+//}

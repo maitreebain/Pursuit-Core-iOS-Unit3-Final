@@ -6,7 +6,7 @@
 //  Copyright © 2019 Pursuit. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct ElementsAPIClient {
     
@@ -41,5 +41,35 @@ struct ElementsAPIClient {
     }
    
     
-    //get images here 
+    //get images here
+    
+//    static func getImage(for elementNum: Int, completion: @escaping (Result<ElementsDataLoad, AppError>) -> ()) {
+//
+//        let thumbnailEndpoint = "http://www.theodoregray.com/periodictable/Tiles/\(elementNum)/s7.JPG"
+//
+//        guard let url = URL(string: thumbnailEndpoint) else {
+//            completion(.failure(.badURL(thumbnailEndpoint)))
+//            return
+//        }
+//
+//        let request = URLRequest(url: url)
+//
+//        NetworkHelper.shared.performDataTask(with: request) { (result) in
+//
+//            switch result{
+//            case .failure(let appError):
+//                completion(.failure(.networkClientError(appError)))
+//            case .success(let data):
+//
+//                do {
+//                    let elementsInfo = try JSONDecoder().decode([ElementsDataLoad].self, from: data)
+//
+//
+//                }catch {
+//
+//                }
+//
+//            }
+//        }
+//    }
 }
