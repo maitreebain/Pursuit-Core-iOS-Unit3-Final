@@ -31,6 +31,7 @@ struct ElementsAPIClient {
                 do {
                     let elements = try JSONDecoder().decode([ElementsDataLoad].self, from: data)
                     
+                    
                     completion(.success(elements))
                 }
                 catch {
@@ -72,8 +73,6 @@ struct ElementsAPIClient {
     }
     
     
-    
-    
     static func postFavorites(favorite: ElementsDataLoad, completion: @escaping (Result<Bool, AppError>) -> ()) {
         
         let favoritesEndpoint = "http://5c1d79abbc26950013fbcaa9.mockapi.io/api/v1/favorites"
@@ -109,4 +108,37 @@ struct ElementsAPIClient {
                         completion(.failure(.encodingError(error)))
                     }
     }
+    
+    static func addElements(completion: @escaping (Result<[ElementsDataLoad], AppError>) -> ()) {
+        
+        let extraElements = "https://5c1d79abbc26950013fbcaa9.mockapi.io/api/v1/elements_remaining"
+        
+        guard let url = URL(string: extraElements) else {
+            completion(.failure(.badURL(extraElements)))
+            return
+        }
+        
+        let request = URLRequest(url: url)
+
+        NetworkHelper.shared.performDataTask(with: request) { (result) in
+            
+            switch result {
+            case .failure(let appError):
+                completion(.failure(.networkClientError(appError)))
+            case .success(let data):
+                
+                do {
+                    let elements = try JSONDecoder().decode([ElementsDataLoad].self, from: data)
+                    
+                    completion(.success(elements))
+                } catch {
+                    completion(.failure(.decodingError(error)))
+                }
+            }
+        }
+        
+    }
+    
+    
+    
 }

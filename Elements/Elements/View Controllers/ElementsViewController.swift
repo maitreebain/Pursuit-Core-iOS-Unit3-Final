@@ -37,6 +37,7 @@ class ElementsViewController: UIViewController {
                 print("appError: \(appError)")
             case .success(let elements):
                 self.elements = elements
+                
             }
         }
         
