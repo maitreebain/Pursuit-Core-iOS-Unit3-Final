@@ -41,35 +41,39 @@ struct ElementsAPIClient {
     }
    
     
-    //get images here
-    
-//    static func getImage(for elementNum: Int, completion: @escaping (Result<ElementsDataLoad, AppError>) -> ()) {
-//
-//        let thumbnailEndpoint = "http://www.theodoregray.com/periodictable/Tiles/\(elementNum)/s7.JPG"
-//
-//        guard let url = URL(string: thumbnailEndpoint) else {
-//            completion(.failure(.badURL(thumbnailEndpoint)))
-//            return
-//        }
-//
-//        let request = URLRequest(url: url)
-//
-//        NetworkHelper.shared.performDataTask(with: request) { (result) in
-//
-//            switch result{
-//            case .failure(let appError):
-//                completion(.failure(.networkClientError(appError)))
-//            case .success(let data):
-//
-//                do {
-//                    let elementsInfo = try JSONDecoder().decode([ElementsDataLoad].self, from: data)
-//
-//
-//                }catch {
-//
-//                }
-//
-//            }
-//        }
-//    }
+    static func postFavorites(favorite: ElementsDataLoad, completion: @escaping (Result<Bool, AppError>) -> ()) {
+        
+        let favoritesEndpoint = "http://5c1d79abbc26950013fbcaa9.mockapi.io/api/v1/favorites"
+        
+        guard let url = URL(string: favoritesEndpoint) else {
+            completion(.failure(.badURL(favoritesEndpoint)))
+            return
+        }
+        
+        do {
+            let data = try JSONEncoder().encode(favorite)
+            
+            var request = URLRequest(url: url)
+            
+            request.httpMethod = "POST"
+            
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            request.httpBody = data
+            
+            NetworkHelper.shared.performDataTask(with: request) { (result) in
+                
+                switch result{
+                case .failure(let appError):
+                    completion(.failure(.networkClientError(appError)))
+                case .success:
+                    completion(.success(true))
+                    
+                }
+    }
+                        
+                    } catch {
+                        completion(.failure(.encodingError(error)))
+                    }
+    }
 }

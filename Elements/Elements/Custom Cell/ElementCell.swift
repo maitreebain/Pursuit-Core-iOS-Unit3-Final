@@ -55,20 +55,5 @@ class ElementCell: UITableViewCell {
                 }
             }
         }
-        
-        
-        
-//        ElementsAPIClient.getImage(for: element.number) { (result) in
-//
-//            switch result {
-//            case .failure(let appError):
-//                print("no image found: \(appError)")
-//                DispatchQueue.main.async {
-//                    self.elementImage.image = UIImage(systemName: "xmark")
-//                }
-//            case .success(let image):
-//                self.elementImage.image =
-//            }
-//        }
     }
 }

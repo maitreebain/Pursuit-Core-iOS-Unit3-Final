@@ -10,21 +10,47 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var favoriteBarButton: UIBarButtonItem!
+    @IBOutlet weak var detailImage: UIImageView!
+    @IBOutlet weak var detailTextView: UITextView!
+    
+    var elements: ElementsDataLoad?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        updateUI()
     }
     
+    func updateUI() {
+        
+        
+        guard let element = elements else {
+            print("could not conform to elements")
+            return
+        }
+        
+        detailTextView.text = "Symbol: \(element.symbol)\nNumber: \(element.number)\nWeight: \(element.atomic_mass ?? 0.0)\nMelting Point: \(element.melt ?? 0.0)\nBoiling Point: \(element.molar_heat ?? 0.0)\nDiscovered by: \(element.discovered_by ?? "Not Found")"
+        
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let link = "http://images-of-elements.com/\(element.name.lowercased()).jpg"
+        
+        detailImage.getImage(for: link) { (result) in
+            
+            switch result {
+            case .failure(let appError):
+                print("image could not be found \(appError)")
+                DispatchQueue.main.async {
+                    self.detailImage.image = UIImage(systemName: "xmark")
+                }
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.detailImage.image = image
+                }
+            }
+        }
     }
-    */
 
+
+    
 }

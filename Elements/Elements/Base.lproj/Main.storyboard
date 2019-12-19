@@ -94,17 +94,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mIY-bP-Mts">
-                                <rect key="frame" x="20" y="151" width="362" height="253"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mIY-bP-Mts">
+                                <rect key="frame" x="40" y="148" width="334" height="269"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3YA-Lz-fWs">
+                                <rect key="frame" x="40" y="437" width="334" height="313.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mCx-53-Fex" firstAttribute="trailing" secondItem="mIY-bP-Mts" secondAttribute="trailing" constant="40" id="6d0-wI-fSj"/>
+                            <constraint firstItem="mIY-bP-Mts" firstAttribute="leading" secondItem="mCx-53-Fex" secondAttribute="leading" constant="40" id="NAL-U9-oYn"/>
+                            <constraint firstItem="3YA-Lz-fWs" firstAttribute="top" secondItem="mIY-bP-Mts" secondAttribute="bottom" constant="20" id="QGf-jl-J0b"/>
+                            <constraint firstItem="mIY-bP-Mts" firstAttribute="height" secondItem="etX-2X-rlT" secondAttribute="height" multiplier="0.3" id="Sr4-TA-QJV"/>
+                            <constraint firstItem="3YA-Lz-fWs" firstAttribute="leading" secondItem="mCx-53-Fex" secondAttribute="leading" constant="40" id="TsZ-eq-dDC"/>
+                            <constraint firstItem="mIY-bP-Mts" firstAttribute="top" secondItem="mCx-53-Fex" secondAttribute="top" constant="60" id="fA8-vC-DSC"/>
+                            <constraint firstItem="3YA-Lz-fWs" firstAttribute="height" secondItem="etX-2X-rlT" secondAttribute="height" multiplier="0.35" id="nOU-GJ-2jw"/>
+                            <constraint firstItem="mCx-53-Fex" firstAttribute="trailing" secondItem="3YA-Lz-fWs" secondAttribute="trailing" constant="40" id="yB0-WZ-vfc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mCx-53-Fex"/>
                     </view>
                     <navigationItem key="navigationItem" id="aj7-rp-KG5">
                         <barButtonItem key="rightBarButtonItem" title="Favorite" image="star.fill" catalog="system" id="dO4-0a-Zb0"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="DetailTextView" destination="3YA-Lz-fWs" id="GR2-C6-6lh"/>
+                        <outlet property="detailImage" destination="mIY-bP-Mts" id="jcO-LC-Q95"/>
+                        <outlet property="favoriteBarButton" destination="dO4-0a-Zb0" id="L17-p7-sxO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tt7-7X-Mqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
