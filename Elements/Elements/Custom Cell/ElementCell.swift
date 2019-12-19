@@ -20,12 +20,8 @@ class ElementCell: UITableViewCell {
     
     func configureCell(for element: ElementsDataLoad) {
         
-        if element.favoritedBy != nil {
-            elementName.text = element.favoritedBy
-        }
-        
         elementName.text = element.name
-        elementMass.text = "\(element.symbol): \(element.number) Mass: \(element.atomic_mass!)"
+        elementMass.text = "\(element.symbol ?? "No Symbol"): \(element.number) Mass: \(element.atomic_mass!)"
         
         link = "http://www.theodoregray.com/periodictable/Tiles/\(element.number)/s7.JPG"
         var newNum = "0"
@@ -41,7 +37,9 @@ class ElementCell: UITableViewCell {
             link = "http://www.theodoregray.com/periodictable/Tiles/\(newNum)/s7.JPG"
         }
         
-        
+        if let favoritedBy = element.favoritedBy {
+            elementMass.text = favoritedBy
+        }
         
         elementImage.getImage(for: link) { [weak self] (result) in
             

@@ -63,7 +63,7 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as? ElementCell else {
-            fatalError("could not conform to ElementCell")
+            fatalError("cell not connected")
         }
         
         let selectedFavorite = elements[indexPath.row]

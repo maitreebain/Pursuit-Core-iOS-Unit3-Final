@@ -9,9 +9,9 @@
 import Foundation
 
 struct ElementsDataLoad: Codable {
-    let name: String
+    let name: String?
     let atomic_mass: Double?
-    let symbol: String
+    let symbol: String?
     var number: Int
     let melt: Double?
     let molar_heat: Double?

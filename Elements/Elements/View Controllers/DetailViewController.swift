@@ -30,10 +30,10 @@ class DetailViewController: UIViewController {
             return
         }
         
-        detailTextView.text = "Symbol: \(element.symbol)\nNumber: \(element.number)\nWeight: \(element.atomic_mass ?? 0.0)\nMelting Point: \(element.melt ?? 0.0)\nBoiling Point: \(element.molar_heat ?? 0.0)\nDiscovered by: \(element.discovered_by ?? "Not Found")"
+        detailTextView.text = "Symbol: \(element.symbol ?? "")\nNumber: \(element.number)\nWeight: \(element.atomic_mass ?? 0.0)\nMelting Point: \(element.melt ?? 0.0)\nBoiling Point: \(element.molar_heat ?? 0.0)\nDiscovered by: \(element.discovered_by ?? "Not Found")"
         
 
-        let link = "http://images-of-elements.com/\(element.name.lowercased()).jpg"
+        let link = "http://images-of-elements.com/\(element.name?.lowercased() ?? "helium").jpg"
         
         detailImage.getImage(for: link) { (result) in
             
@@ -60,11 +60,7 @@ class DetailViewController: UIViewController {
             return
         }
         
-        var addedFavorite = ElementsDataLoad(name: element.name, atomic_mass: element.atomic_mass, symbol: element.symbol, number: element.number, melt: element.melt, molar_heat: element.molar_heat, discovered_by: element.discovered_by, favoritedBy: nil)
-        
-        if element.favoritedBy != nil {
-        addedFavorite = ElementsDataLoad(name: element.name, atomic_mass: element.atomic_mass, symbol: element.symbol, number: element.number, melt: element.melt, molar_heat: element.molar_heat, discovered_by: element.discovered_by, favoritedBy: "Mai")
-        }
+        let addedFavorite = ElementsDataLoad(name: element.name, atomic_mass: element.atomic_mass, symbol: element.symbol, number: element.number, melt: element.melt, molar_heat: element.molar_heat, discovered_by: element.discovered_by, favoritedBy: "Mai")
         
         ElementsAPIClient.postFavorites(favorite: addedFavorite) { [weak self] (result) in
             
@@ -76,7 +72,7 @@ class DetailViewController: UIViewController {
                     }
                 case .success:
                     DispatchQueue.main.async {
-                        self?.showAlert(title: "Favorite added!", message: "\(addedFavorite.name) added to your favorites")
+                        self?.showAlert(title: "Favorite added!", message: "\(addedFavorite.name ?? "") added to your favorites")
                 }
             }
         }
