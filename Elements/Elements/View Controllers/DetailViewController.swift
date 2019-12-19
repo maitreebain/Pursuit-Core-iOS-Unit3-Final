@@ -60,7 +60,11 @@ class DetailViewController: UIViewController {
             return
         }
         
-        let addedFavorite = ElementsDataLoad(name: element.name, atomic_mass: element.atomic_mass, symbol: element.symbol, number: element.number, melt: element.melt, molar_heat: element.molar_heat, discovered_by: element.discovered_by, favoritedBy: "Mai")
+        var addedFavorite = ElementsDataLoad(name: element.name, atomic_mass: element.atomic_mass, symbol: element.symbol, number: element.number, melt: element.melt, molar_heat: element.molar_heat, discovered_by: element.discovered_by, favoritedBy: nil)
+        
+        if element.favoritedBy != nil {
+        addedFavorite = ElementsDataLoad(name: element.name, atomic_mass: element.atomic_mass, symbol: element.symbol, number: element.number, melt: element.melt, molar_heat: element.molar_heat, discovered_by: element.discovered_by, favoritedBy: "Mai")
+        }
         
         ElementsAPIClient.postFavorites(favorite: addedFavorite) { [weak self] (result) in
             

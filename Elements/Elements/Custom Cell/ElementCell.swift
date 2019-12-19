@@ -20,6 +20,9 @@ class ElementCell: UITableViewCell {
     
     func configureCell(for element: ElementsDataLoad) {
         
+        if element.favoritedBy != nil {
+            elementName.text = element.favoritedBy
+        }
         
         elementName.text = element.name
         elementMass.text = "\(element.symbol): \(element.number) Mass: \(element.atomic_mass!)"

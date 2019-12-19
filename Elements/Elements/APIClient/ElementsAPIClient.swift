@@ -40,6 +40,39 @@ struct ElementsAPIClient {
         }
     }
    
+    static func getFavorites(completion: @escaping (Result<[ElementsDataLoad], AppError>) -> ()) {
+        
+        let favoritesEndpoint = "http://5c1d79abbc26950013fbcaa9.mockapi.io/api/v1/favorites"
+        
+        guard let url = URL(string: favoritesEndpoint) else {
+            completion(.failure(.badURL(favoritesEndpoint)))
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        
+        NetworkHelper.shared.performDataTask(with: request) { (result) in
+            
+            switch result{
+                case .failure(let appError):
+                    completion(.failure(.networkClientError(appError)))
+                    return
+                case .success(let data):
+                    
+                    do {
+                        let favorites = try JSONDecoder().decode([ElementsDataLoad].self, from: data)
+                        
+                        completion(.success(favorites))
+                    } catch {
+                        completion(.failure(.decodingError(error)))
+                    }
+            }
+        }
+        
+    }
+    
+    
+    
     
     static func postFavorites(favorite: ElementsDataLoad, completion: @escaping (Result<Bool, AppError>) -> ()) {
         
